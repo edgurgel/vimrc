@@ -3,6 +3,8 @@ set nocompatible
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+let mapleader = "\\"
+
 Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-fugitive'
@@ -58,6 +60,7 @@ Bundle "honza/snipmate-snippets"
 Bundle "garbas/vim-snipmate"
 
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rails'
 
 " Close delimiters
 Bundle 'jiangmiao/auto-pairs'
@@ -68,7 +71,7 @@ Bundle 'mrtazz/molokai.vim'
 syn on " colored syntax
 
 set number " line numbers
-set clipboard=unnamedplus " tries to use system clipboard
+"set clipboard=unnamedplus " tries to use system clipboard
 set cursorline
 
 if has("gui_running")
@@ -80,7 +83,7 @@ endif
 filetype plugin indent on
 
 " keep pasted content in buffer
-xnoremap p pgvy
+""xnoremap p pgvy
 
 " if a line is splitted between two lines, 'j' and 'k' move through its parts
 nnoremap j gj
@@ -132,10 +135,11 @@ au FileType java map <leader>fo :JavaFormat<cr>
 au FileType java map <leader>get :JavaGet<cr>
 au FileType java map <leader>set :JavaSet<cr>
 
-set tabstop=4 shiftwidth=4 softtabstop=4 backspace=indent,eol,start expandtab
+set tabstop=2 shiftwidth=2 softtabstop=2 backspace=indent,eol,start expandtab
 
 " Scala indent with 3 spaces
 au FileType scala set tabstop=3 shiftwidth=3 softtabstop=3
+au FileType java set tabstop=4 shiftwidth=4 softtabstop=4
 
 if has("gui_running")
     " set guioptions-=T " turn off toolbar
@@ -146,14 +150,14 @@ if has("gui_running")
 endif
 
 " Disable arrow keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+"map <up> <nop>
+"map <down> <nop>
+"map <left> <nop>
+"map <right> <nop>
 
 " Disable home and end keys
-map <home> <nop>
-map <end> <nop>
+""map <home> <nop>
+""map <end> <nop>
 
 " Display extra whitespace
 set list listchars=tab:»…,trail:…
@@ -166,8 +170,7 @@ func! DeleteTrailingWS()
 endfunc
 au BufWrite * :call DeleteTrailingWS()
 
-" Automatic folding
-au BufReadPre * setlocal foldmethod=indent
+""au BufReadPre * setlocal foldmethod=indent
 
 au BufNewFile,BufRead *.gradle setf groovy
 au BufNewFile,BufRead *.json setf javascript
@@ -177,11 +180,9 @@ au BufNewFile,BufRead *.md setfiletype markdown
 nnoremap <leader>so :source ~/.vimrc<cr>
 " Edit .vimrc
 nnoremap <leader>rc :tabnew ~/.vimrc<cr>
-
-" Backup directory
-set backupdir=~/.vim_bkp//
-set directory=~/.vim_bkp//
-
-" Highlighting lines longer than 80 columns
-highlight OverLength ctermbg=darkred ctermfg=white guibg=#592929
+"No backups
+set nobackup
+set noswapfile
+" 80 columns
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%>80v.\+/
