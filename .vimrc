@@ -1,4 +1,5 @@
 set nocompatible
+set mouse=a
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -6,6 +7,11 @@ call vundle#rc()
 let mapleader = "\\"
 
 Bundle 'gmarik/vundle'
+
+" Statusline utilities
+Bundle 'Lokaltog/vim-powerline'
+set laststatus=2
+let g:Powerline_symbols = 'unicode'"
 
 Bundle 'tpope/vim-fugitive'
 nmap <leader>gst :Gstatus<CR>
@@ -29,10 +35,10 @@ Bundle 'skammer/vim-css-color'
 Bundle 'mutewinter/vim-indent-guides'
 
 Bundle 'ervandew/supertab'
-let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
+""let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
 "let g:SuperTabClosePreviewOnPopupClose = 1
-let g:SuperTabMappingForward = "<c-space>"
-let g:SuperTabMappingBackward = "<s-c-space>"
+""let g:SuperTabMappingForward = "<c-space>"
+""let g:SuperTabMappingBackward = "<s-c-space>"
 
 Bundle 'scrooloose/nerdcommenter'
 
@@ -72,7 +78,6 @@ syn on " colored syntax
 
 set number " line numbers
 "set clipboard=unnamedplus " tries to use system clipboard
-set cursorline
 
 if has("gui_running")
     colorscheme molokai
@@ -129,11 +134,11 @@ nnoremap <leader>lr <esc>:let @/ = ""<cr>:<esc>
 
 " Java specifics
 " Eclim
-au FileType java map <leader>mi :JavaImportMissing<cr>:JavaImportClean<cr>:JavaImportSort<cr>
-au FileType java map <leader>co :JavaCorrect<cr>
-au FileType java map <leader>fo :JavaFormat<cr>
-au FileType java map <leader>get :JavaGet<cr>
-au FileType java map <leader>set :JavaSet<cr>
+""au FileType java map <leader>mi :JavaImportMissing<cr>:JavaImportClean<cr>:JavaImportSort<cr>
+""au FileType java map <leader>co :JavaCorrect<cr>
+""au FileType java map <leader>fo :JavaFormat<cr>
+""au FileType java map <leader>get :JavaGet<cr>
+""au FileType java map <leader>set :JavaSet<cr>
 
 set tabstop=2 shiftwidth=2 softtabstop=2 backspace=indent,eol,start expandtab
 
@@ -183,7 +188,9 @@ nnoremap <leader>rc :tabnew ~/.vimrc<cr>
 "No backups
 set nobackup
 set noswapfile
+
+map <leader>q3 :!open "/Applications/ioquake3/ioquake3-1.36.app"<cr>
 " 80 columns
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%>80v.\+/
-map <leader>q3 :!open "/Applications/ioquake3/ioquake3-1.36.app"<cr>
+set cursorline
