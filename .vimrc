@@ -69,7 +69,8 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 
 " Close delimiters
-Bundle 'jiangmiao/auto-pairs'
+"Bundle 'jiangmiao/auto-pairs'
+Bundle 'Raimondi/delimitMate'
 
 " Themes
 Bundle 'mrtazz/molokai.vim'
