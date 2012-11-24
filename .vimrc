@@ -35,10 +35,10 @@ Bundle 'skammer/vim-css-color'
 Bundle 'mutewinter/vim-indent-guides'
 
 Bundle 'ervandew/supertab'
-""let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
+"let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
 "let g:SuperTabClosePreviewOnPopupClose = 1
-""let g:SuperTabMappingForward = "<c-space>"
-""let g:SuperTabMappingBackward = "<s-c-space>"
+"let g:SuperTabMappingForward = "<c-space>"
+"let g:SuperTabMappingBackward = "<s-c-space>"
 
 Bundle 'scrooloose/nerdcommenter'
 
@@ -67,6 +67,8 @@ Bundle "garbas/vim-snipmate"
 
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
+
+Bundle 'derekwyatt/vim-scala'
 
 " Close delimiters
 "Bundle 'jiangmiao/auto-pairs'
@@ -144,7 +146,7 @@ nnoremap <leader>lr <esc>:let @/ = ""<cr>:<esc>
 set tabstop=2 shiftwidth=2 softtabstop=2 backspace=indent,eol,start expandtab
 
 " Scala indent with 3 spaces
-au FileType scala set tabstop=3 shiftwidth=3 softtabstop=3
+au FileType scala set tabstop=2 shiftwidth=2 softtabstop=2
 au FileType java set tabstop=4 shiftwidth=4 softtabstop=4
 
 if has("gui_running")
@@ -181,6 +183,8 @@ au BufWrite * :call DeleteTrailingWS()
 au BufNewFile,BufRead *.gradle setf groovy
 au BufNewFile,BufRead *.json setf javascript
 au BufNewFile,BufRead *.md setfiletype markdown
+au BufNewFile,BufRead *.scala setfiletype scala
+au BufNewFile,BufRead *.sbt setfiletype scala
 
 " Resource .vimrc
 nnoremap <leader>so :source ~/.vimrc<cr>
