@@ -55,6 +55,13 @@ let g:ctrlp_custom_ignore = {
 \ 'file': '\.class$\|\.so$\|\.db$\|\.swp$',
 \ }
 
+let g:ctrlp_user_command = {
+    \ 'types': {
+        \ 1: ['.git', 'cd %s && git ls-files && git ls-files --others --exclude-standard'],
+        \ },
+    \ 'fallback': 'find %s -type f'
+    \ }
+
 Bundle 'majutsushi/tagbar'
 set updatetime=500
 map <leader>tb :TagbarToggle<CR>
