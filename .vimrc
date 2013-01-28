@@ -202,3 +202,4 @@ map <leader>q3 :!open "/Applications/ioquake3/ioquake3-1.36.app"<cr>
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%>80v.\+/
 set cursorline
+set scrolloff=5
