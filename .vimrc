@@ -51,7 +51,7 @@ let g:nerdtree_tabs_open_on_gui_startup=0
 
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_custom_ignore = {
-\ 'dir':  '\v[\/](\.git|\.hg|\.svn|build|bin)$',
+\ 'dir':  '\v[\/](\.git|\.hg|\.svn|build|target|bin)$',
 \ 'file': '\.class$\|\.so$\|\.db$\|\.swp$',
 \ }
 
@@ -199,3 +199,5 @@ map <leader>q3 :!open "/Applications/ioquake3/ioquake3-1.36.app"<cr>
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%>80v.\+/
 set cursorline
+" Erlang
+Bundle 'jimenezrick/vimerl'
