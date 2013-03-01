@@ -8,12 +8,16 @@ let mapleader = "\\"
 
 Bundle 'gmarik/vundle'
 
+"Puppet
+Bundle 'rodjek/vim-puppet'
+
 " Statusline utilities
 Bundle 'Lokaltog/vim-powerline'
 set laststatus=2
 let g:Powerline_symbols = 'unicode'"
 
 Bundle 'tpope/vim-fugitive'
+Bundle 'gregsexton/gitv'
 nmap <leader>gst :Gstatus<CR>
 nmap <leader>gdi :Gdiff<CR>
 nmap <leader>ta :diffget //2<CR>
@@ -35,10 +39,10 @@ Bundle 'skammer/vim-css-color'
 Bundle 'mutewinter/vim-indent-guides'
 
 Bundle 'ervandew/supertab'
-""let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
+"let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
 "let g:SuperTabClosePreviewOnPopupClose = 1
-""let g:SuperTabMappingForward = "<c-space>"
-""let g:SuperTabMappingBackward = "<s-c-space>"
+"let g:SuperTabMappingForward = "<c-space>"
+"let g:SuperTabMappingBackward = "<s-c-space>"
 
 Bundle 'scrooloose/nerdcommenter'
 
@@ -184,6 +188,8 @@ endfunc
 au BufWrite * :call DeleteTrailingWS()
 
 ""au BufReadPre * setlocal foldmethod=indent
+" Unfold
+nmap <SPACE> zA
 
 au BufNewFile,BufRead *.gradle setf groovy
 au BufNewFile,BufRead *.json setf javascript
