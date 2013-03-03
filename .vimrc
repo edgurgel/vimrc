@@ -8,12 +8,16 @@ let mapleader = "\\"
 
 Bundle 'gmarik/vundle'
 
+"Puppet
+Bundle 'rodjek/vim-puppet'
+
 " Statusline utilities
 Bundle 'Lokaltog/vim-powerline'
 set laststatus=2
 let g:Powerline_symbols = 'unicode'"
 
 Bundle 'tpope/vim-fugitive'
+Bundle 'gregsexton/gitv'
 nmap <leader>gst :Gstatus<CR>
 nmap <leader>gdi :Gdiff<CR>
 nmap <leader>ta :diffget //2<CR>
@@ -54,6 +58,13 @@ let g:ctrlp_custom_ignore = {
 \ 'dir':  '\v[\/](\.git|\.hg|\.svn|build|target|bin)$',
 \ 'file': '\.class$\|\.so$\|\.db$\|\.swp$',
 \ }
+
+let g:ctrlp_user_command = {
+    \ 'types': {
+        \ 1: ['.git', 'cd %s && git ls-files && git ls-files --others --exclude-standard'],
+        \ },
+    \ 'fallback': 'find %s -type f'
+    \ }
 
 Bundle 'majutsushi/tagbar'
 set updatetime=500
@@ -179,6 +190,8 @@ endfunc
 au BufWrite * :call DeleteTrailingWS()
 
 ""au BufReadPre * setlocal foldmethod=indent
+" Unfold
+nmap <SPACE> zA
 
 au BufNewFile,BufRead *.gradle setf groovy
 au BufNewFile,BufRead *.json setf javascript
@@ -201,3 +214,4 @@ match OverLength /\%>80v.\+/
 set cursorline
 " Erlang
 Bundle 'jimenezrick/vimerl'
+set scrolloff=5
