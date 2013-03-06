@@ -8,6 +8,14 @@ let mapleader = "\\"
 
 Bundle 'gmarik/vundle'
 
+"Beautiful git diff
+Bundle 'airblade/vim-gitgutter'
+
+Bundle 'scrooloose/syntastic'
+let g:syntastic_mode_map = { 'mode': 'passive',
+      \ 'active_filetypes': ['ruby', 'puppet', 'yaml', 'erlang', 'c', 'json', 'tex', 'cpp', 'html', 'javascript'],
+      \ 'passive_filetypes': [] }
+
 "Puppet
 Bundle 'rodjek/vim-puppet'
 
