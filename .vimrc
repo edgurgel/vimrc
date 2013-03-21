@@ -8,6 +8,14 @@ let mapleader = "\\"
 
 Bundle 'gmarik/vundle'
 
+Bundle 'bkad/CamelCaseMotion'
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+sunmap w
+sunmap b
+sunmap e
+
 "Beautiful git diff
 Bundle 'airblade/vim-gitgutter'
 
@@ -66,6 +74,7 @@ let g:ctrlp_custom_ignore = {
 \ 'dir':  '\v[\/](\.git|\.hg|\.svn|build|target|bin)$',
 \ 'file': '\.class$\|\.so$\|\.db$\|\.swp$',
 \ }
+map <Leader>s :CtrlPLine<CR>
 
 let g:ctrlp_user_command = {
     \ 'types': {
@@ -223,3 +232,4 @@ set cursorline
 " Erlang
 Bundle 'jimenezrick/vimerl'
 set scrolloff=5
+highlight clear SignColumn
