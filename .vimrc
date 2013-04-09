@@ -101,6 +101,7 @@ Bundle 'derekwyatt/vim-scala'
 " Close delimiters
 "Bundle 'jiangmiao/auto-pairs'
 Bundle 'Raimondi/delimitMate'
+au FileType erlang let b:delimitMate_matchpairs = "<<:>>"
 
 " Themes
 Bundle 'mrtazz/molokai.vim'
@@ -233,3 +234,4 @@ set cursorline
 Bundle 'jimenezrick/vimerl'
 set scrolloff=5
 highlight clear SignColumn
+
